@@ -43,7 +43,9 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Introduce el elemento a añadir");
+                    sc.nextLine();
                     String elemento = sc.nextLine();
+
                     lista.addProduct(elemento);
                     break;
                 case 3:
@@ -51,6 +53,7 @@ public class Main {
                     int index= sc.nextInt();
                     System.out.println("Introduce el nuevo elemento");
                     String elem = sc.nextLine();
+                    sc.nextLine();
                     lista.modifyProductItem(index,elem);
                     break;
                 case 4:
@@ -59,12 +62,13 @@ public class Main {
                     lista.removePorductItem(inde);
                     break;
                 default:
-                    System.out.println("Elige un numero del 0 al 5");
+                    System.out.println("Incorrecto. Debe ser un numero del 0 al 5");
                     opcion = sc.nextInt();
+                    break;
 
             }
 
-            System.out.println("Introduce siguiente opcion:");
+            System.out.println("siguiente opcion:");
             opcion = sc.nextInt();
         }
 

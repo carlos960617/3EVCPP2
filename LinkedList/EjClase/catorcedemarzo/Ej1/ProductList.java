@@ -12,6 +12,7 @@ public class ProductList {
     }
 
     public  void addProduct(String item){
+
         productList.add(item);
     }
 
@@ -21,6 +22,7 @@ public class ProductList {
             System.out.println(productList.get(i));
 
         }
+
 
         System.out.println("Numero de elementos:"+ productList.size());
 
