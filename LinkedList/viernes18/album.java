@@ -21,6 +21,7 @@ public class album {
             cancion c1 = new cancion(titulo, duracion);
             canciones.add(c1);
             return true;
+            //puedes hacerlo seguido canciones.add(new cancion(titulo, duracion))
         }
         System.out.println("La cancion ya está en el album");
         return false;

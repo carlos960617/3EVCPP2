@@ -42,12 +42,7 @@ public class copiaMain {
             System.out.println("No hay canciones para reproducir");
             return;
         }
-        /*else if(opcion == 0){
-            System.out.println("Reproduciendo primera cancion: "+it.next());
-            navMenu();
-            avanzando = true;
-        }*/
-        cancion elemento = null;
+
         while(opcion != 0){
 
             if(!avanzando) {
@@ -57,7 +52,6 @@ public class copiaMain {
 
 
             switch(opcion){
-
                 case 0:
                     System.out.println("Cerrando lista de reproducción...");
                     break;
@@ -76,20 +70,15 @@ public class copiaMain {
                             }else{
                                 System.out.println("Estas en la primera cancion");
                             }
-
                     break;
                 case 3:
-
                         System.out.println("Volviendo a empezar misma cancion: "+it.previous());
                         avanzando = false;
-
                     break;
                 case 4:
-
                     printPlaylist(lista);
                     break;
                 case 5:
-
                     navMenu();
                     break;
                 case 6:
@@ -103,10 +92,7 @@ public class copiaMain {
                             System.out.println("Reproduciendo: "+it.previous());
                             avanzando = false;
                         }
-
-                    }else{
-                        System.out.println("Por los pelos, la cancion no se ha borrado.");
-                    }
+                    }else{System.out.println("Por los pelos, la cancion no se ha borrado.");}
 
             }
             System.out.println("Siguiente accion: ");
