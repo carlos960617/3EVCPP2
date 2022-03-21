@@ -124,8 +124,13 @@ public class copiaMain {
 
         LinkedList<cancion> playList = new LinkedList<>();
 
-        album1.addToPlayList("No dire que es mi amor", playList);
+        /*album1.addToPlayList("No dire que es mi amor", playList);
         album2.addToPlayList("Needed Me", playList);
+        album1.addToPlayList(1,playList);
+        album2.addToPlayList(2,playList);*/
+
+        album1.addToPlayList(2, playList);
+        album2.addToPlayList(1, playList);
         album1.addToPlayList(1,playList);
         album2.addToPlayList(2,playList);
 
