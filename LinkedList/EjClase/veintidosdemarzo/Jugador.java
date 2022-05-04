@@ -2,17 +2,28 @@ package LinkedList.EjClase.veintidosdemarzo;
 
 import java.util.LinkedList;
 
+enum Armas {Espada, Maza, Trueno, Pistola}
+
 public class Jugador implements Saveable{
 
-    private String nombre, arma;
+    private String nombre;
     private int hitPoints, fuerza, vida;
+    private  Armas armas;
 
     public Jugador(String n, int hP, int f){
         nombre = n;
         hitPoints = hP;
         fuerza = f;
         vida = 500;
-        arma = "Espada";
+        armas = Armas.Espada;
+    }
+
+    public Jugador(String n, int hP, int f, Armas arma){
+        nombre = n;
+        hitPoints = hP;
+        fuerza = f;
+        vida = 500;
+        armas = arma;
     }
 
     public int getVida() {
@@ -23,9 +34,7 @@ public class Jugador implements Saveable{
         return nombre;
     }
 
-    public String getArma() {
-        return arma;
-    }
+    public Armas getArmas(Jugador j1) {return j1.armas;}
 
     public int getHitPoints() {
         return hitPoints;
@@ -35,13 +44,13 @@ public class Jugador implements Saveable{
         return fuerza;
     }
 
-    public int inflingeDaño(Monstruo objetivo, int daño){
+    /*public int inflingeDaño(Monstruo objetivo, int daño, Jugador j1){
 
-        int dañoArma = Lucha.dañoArma(this.getArma());
+        //int dañoArma = Lucha.dañoArma(this.getArmas(j1));
 
-        System.out.println("El jugador usa su "+this.getArma());
+        System.out.println("El jugador usa su "+this.getArmas(j1));
 
-        int dañoTotal = objetivo.getVida()-((daño + dañoArma)*getFuerza());
+        //int dañoTotal = objetivo.getVida()-((daño + dañoArma)*getFuerza());
 
         if(dañoTotal > 0){
             System.out.println("Al monstruo le quedan "+dañoTotal+" puntos de vida ");
@@ -51,7 +60,7 @@ public class Jugador implements Saveable{
             return -1;
         }
 
-    }
+    }*/
 
     @Override
     public LinkedList<String> write(){
@@ -61,7 +70,7 @@ public class Jugador implements Saveable{
         /*Dos formas de convertir a String:*/
         lista.add(""+hitPoints);
         lista.add(Integer.toString(fuerza));
-        lista.add(arma);
+        //lista.add(armas);
 
         return lista;
     };
@@ -73,13 +82,13 @@ public class Jugador implements Saveable{
             nombre = lista.get(0);
             hitPoints = Integer.parseInt(lista.get(1));
             fuerza = Integer.parseInt(lista.get(2));
-            arma = lista.get(3);
+           // armas = lista.get(3);
         }
 
-    };
+    }
 
     @Override
     public String toString(){
-        return "Jugador{nombre= "+nombre+", hitPoints= "+hitPoints+", fuerza= "+fuerza+", arma= "+arma+"}";
+        return "Jugador{nombre= "+nombre+", hitPoints= "+hitPoints+", fuerza= "+fuerza+", arma= "+armas+"}";
     }
 }
